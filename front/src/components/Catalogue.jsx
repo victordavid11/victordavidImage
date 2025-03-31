@@ -8,15 +8,15 @@ import LIFESTYLE from "../assets/cata-front/UXP_7771.jpg";
 
 const Catalogue = () => {
   const categories = [
-    { img: HEAD, title: "HEADSHOTS", to: "/catalogue" },
-    { img: FESTIVE, title: "FESTIVE" },
-    { img: LIFESTYLE, title: "LIFESTYLE" },
-    { img: PORTRAIT, title: "PORTRAIT" },
+    { img: HEAD, title: "HEADSHOTS", to: "/Headshot" },
+    { img: FESTIVE, title: "FESTIVE", to: "/Festive" },
+    { img: LIFESTYLE, title: "LIFESTYLE", to: "/Lifestyle" },
+    { img: PORTRAIT, title: "PORTRAIT" , to: "/Portrait"},
   ];
 
   return (
-    <div className=''>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pl-4 gap-4">
+    <div className='pt-28'>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pl-8 gap-4">
         {categories.map((category, index) => (
                <NavLink 
             to={category.to} 
@@ -26,7 +26,7 @@ const Catalogue = () => {
           <div key={index} className="relative">
             <div className="relative">
               <img
-                className="h-screen object-cover rounded-2xl"
+                className="h-96 object-cover rounded-2xl"
                 src={category.img}
                 alt={category.title}
               />
