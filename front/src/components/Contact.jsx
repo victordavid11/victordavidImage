@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-28 px-4">
+    <div className="pt-28 px-4 pb-10">
       <h1 className="text-3xl font-bold text-center mb-6">Book Us</h1>
       <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto">
         <div className="mb-4">

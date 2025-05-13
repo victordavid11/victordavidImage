@@ -25,12 +25,12 @@ const App = () => {
               <div id="home">
                 <Home />
               </div>
-              <div id="about">
+              {/* <div id="about">
                 <About />
               </div>
               <div id="catalogue">
                 <Catalogue />
-              </div>
+              </div> */}
               <div id="contact">
                 <Contact />
               </div>
