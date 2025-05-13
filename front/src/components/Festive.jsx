@@ -43,7 +43,7 @@ const Festive = () => {
   return (
     <div className="relative">
       {/* Back button to previous route */}
-      <button
+      {/* <button
         onClick={goBack}
         className="fixed top-14 left-4 z-10 bg-black/70 text-white px-4 py-2 rounded-lg flex items-center"
       >
@@ -60,7 +60,7 @@ const Festive = () => {
           />
         </svg>
         Back
-      </button>
+      </button> */}
 
       {/* Gallery grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 px-8 pt-16 gap-4">

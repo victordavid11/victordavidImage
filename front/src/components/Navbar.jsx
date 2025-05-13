@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [currentTime , setCurrentTime] = useState("");
+ useEffect(() => {
+  const updateClock = () => {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+    setCurrentTime(timeString);
+  };
+  const intervalId = setInterval(updateClock, 1000); // Update every second
+  updateClock(); // Initial call to set the time immediately
+  return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, []);
+
+
+
   return (
     <div>
       <nav className="flex top-0 left-0 z-50 w-full fixed justify-between px-8 py-3">
@@ -12,7 +31,7 @@ const Navbar = () => {
 
         <span>
           <h5 className="font-bold text-sm text-gray-500">Location:</h5>
-          <h6 className="font-bold text-sm">Lagos, Nigeria</h6>
+          <h6 className="font-bold text-sm">Lagos, Nigeria ({currentTime})</h6>
         </span>
 
         <span>
