@@ -11,6 +11,20 @@ html {
   -ms-overflow-style: none; 
   scroll-behavior: smooth;
 }
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Dark Theme */
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 /* body {
   overflow-x: hidden;
 }
