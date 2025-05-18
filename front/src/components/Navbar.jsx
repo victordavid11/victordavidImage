@@ -43,10 +43,8 @@ const toggleTheme = (newTheme) => {
   return (
     <div>
       <nav
-        className={`flex top-0 left-0 z-50 w-full fixed justify-between px-8 py-3 shadow-md transition-colors duration-300 ${
-          theme === "light"
-            ? "bg-white text-gray-800"
-            : "bg-black text-white"
+        className={` flex top-0 left-0 z-50 w-full fixed justify-between px-8 py-3 shadow-md transition-colors duration-300 ${
+          theme === "light" ? "bg-white text-gray-800" : "bg-black text-white"
         }`}
       >
         <span className="hidden md:block">
@@ -112,17 +110,13 @@ const toggleTheme = (newTheme) => {
           <div className="flex space-x-2">
             <button
               onClick={() => toggleTheme("light")}
-              className={`font-bold text-sm px-2 py-1 rounded ${
-                theme === "light" ? "bg-gray-300" : "bg-gray-200"
-              }`}
+              className="font-bold text-sm px-2 py-1 rounded"
             >
               LightMode
             </button>
             <button
               onClick={() => toggleTheme("dark")}
-              className={`font-bold text-sm px-2 py-1 rounded ${
-                theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-200"
-              }`}
+              className="font-bold text-sm px-2 py-1 rounded"
             >
               DarkMode
             </button>
@@ -140,7 +134,11 @@ const toggleTheme = (newTheme) => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-gray-200 bg-opacity-50 shadow-md  fixed top-16 left-0 h-full w-full z-50">
+        <div
+          className={`md:hidden shadow-md fixed top-16 left-0 h-full w-full z-50 transition-colors duration-300 ${
+            theme === "light" ? "bg-white text-gray-800" : "bg-black text-white"
+          }`}
+        >
           <ul className="flex flex-col space-y-4 p-4">
             <li>
               <a
@@ -191,6 +189,20 @@ const toggleTheme = (newTheme) => {
               </NavLink>
             </li>
           </ul>
+          <div className="flex space-x-2">
+            <span
+              onClick={() => toggleTheme("light")}
+              className=" font-bold text-gray-500 text-sm px-2 py-1 rounded"
+            >
+              LightMode
+            </span>
+            <button
+              onClick={() => toggleTheme("dark")}
+              className="font-bold text-gray-500 text-sm px-2 py-1 rounded"
+            >
+              DarkMode
+            </button>
+          </div>
         </div>
       )}
     </div>

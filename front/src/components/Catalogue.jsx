@@ -25,7 +25,7 @@ const Catalogue = () => {
           >
           <div key={index} className="relative">
             <div className="relative">
-              <img
+              <img loading="lazy"
                 className="h-96 object-cover rounded-2xl"
                 src={category.img}
                 alt={category.title}
